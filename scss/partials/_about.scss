@@ -1,0 +1,61 @@
+@use "_var.scss"as *; 
+@use "_mixins.scss"as *;
+
+.about{
+    margin-top: 100px;
+    
+    &__inner{
+        margin-top: 66px;
+        display: flex;
+        justify-content: space-between;
+        gap: 25px;
+    }
+
+    &__photo{
+        position: relative;
+        width: 395px;
+        display: flex;
+    }
+
+    &__rectangle{
+        align-self: flex-end;
+        width: 397px;
+        height: 337px;
+        border-radius: 25px;
+        background: $Purple-bg;
+    }
+
+    &__img{
+        position: absolute;
+        bottom: 0;
+        width: 395px;
+        height: 482.254px;
+        border-radius: 25px;
+        background: url(../uploads/yaroslava_shushina.png);
+        // background: url(../uploads/img.png);
+        background-size: cover;
+    }
+
+    &__content{
+        border-radius: 25px;
+        background: $Green-bg;
+        padding: 40px;
+    }
+
+    &__text{
+        margin: 0 0 23px 0;
+        font-family: Acrom;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    &__text:last-child{
+        margin: 0;
+    }
+
+    &__b{
+        font-weight: 500;
+    }
+}

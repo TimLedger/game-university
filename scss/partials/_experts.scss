@@ -1,0 +1,60 @@
+@use "_var.scss"as *;
+@use "_mixins.scss"as *;
+
+.experts{
+    margin-top: 100px;
+
+    &__inner{
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 200px 340px;
+        gap: 25px;
+    }
+
+    &__card-anim{
+        border-radius: 25px;
+        background: $Yellow-bg url(../images/play_circle.svg) 57px 50% no-repeat;
+        padding: 55px 40px 40px 253px;
+        grid-column: 1/3; 
+        grid-row: 1/2; 
+        
+    }
+
+    &__card-custom{
+        border-radius: 25px;
+        background: $Purple-bg url(../images/settings_heart.svg) 50% 179px no-repeat;
+        padding: 40px;
+        grid-column: 1/2; 
+        grid-row: 2/3; 
+    }
+
+    &__card-auto{
+        border-radius: 25px;
+        background: $Purple-bg url(../images/allergy.svg) 50% 179px no-repeat;
+        padding: 40px;
+        grid-column: 2/3; 
+        grid-row: 2/3; 
+    }
+
+    &__card-chart{
+        border-radius: 25px;
+        background: $Green-bg url(../images/bar_chart.svg) 50% 276px no-repeat;
+        padding: 40px;
+        grid-column: 3/4; 
+        grid-row: 1/3; 
+    }
+
+    &__text{
+        margin: 0;
+        font-family: Acrom;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    &__b{
+        font-weight: 500;
+    }
+        
+}

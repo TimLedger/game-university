@@ -1,0 +1,37 @@
+@use "_var.scss"as *;
+@use "_mixins.scss"as *;
+
+.cta-first{
+    margin-top: 100px;
+
+    &__inner{
+        border-radius: 25px;
+        background: $Purple-bg;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 70px 175px 80px;
+        gap: 200px;
+    }
+
+    &__logo{
+        width: 294.9px;
+        height: 286.284px;
+        background: url(../images/logo.svg);
+    }
+
+    &__content{
+        width: 45%;
+    }
+
+    &__name{
+        margin: 0;
+        font-size: 46px;
+    }
+
+    &__text{
+        margin: 40px 0 0 0;
+        font-size: 64px;
+        line-height: normal;
+    }
+}

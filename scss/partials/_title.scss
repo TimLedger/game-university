@@ -1,0 +1,23 @@
+@use "_var.scss"as *;
+@use "_mixins.scss"as *;
+
+.multi-colored{
+    &__purple{
+        color: $Purple;
+    }
+
+    &__green{
+        color: $Green;
+    }
+
+    &__yellow{
+        color: $Yellow;
+    }    
+}
+
+.title{
+    margin: 0;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 97.5%; 
+}

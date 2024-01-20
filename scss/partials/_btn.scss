@@ -1,0 +1,143 @@
+@use "_var.scss"as *; 
+@use "_mixins.scss"as *;
+ 
+.btn { 
+  cursor: pointer;   
+  
+  &__purple{
+    color: $White;
+    font-size: 20px;
+    padding: 16px 40px;
+    margin-left: 15px;
+    border-radius: 8px;
+    background: $Purple;
+    border: none;
+
+    &:hover{
+      background: $Purple-hv;
+    }
+  }
+
+  &__white{
+    font-size: 20px;
+    padding: 16px 36px;
+    margin-left: 15px;
+    border-radius: 8px;
+    background: none;
+    border: 0.62px solid $Purple;
+
+    &:hover{
+      background: $Purple-bg;
+    }
+  }
+
+  &__start{
+    position: absolute;
+    top: 98px;
+    right: 133px;
+    font-size: 27.692px;
+    color: $White;
+    padding: 22px 138px;
+    border-radius: 10px;
+    border: none;
+    background: $Purple;
+
+    &:hover{
+      background: $Purple-hv;
+    }
+  }
+
+  &__que{
+    position: relative;
+    margin-bottom: 15px;
+    align-self: flex-end;
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background: url(../images/que.svg) center;
+
+    &__input{
+      display: none;
+    }
+
+    
+
+    &__frame{
+      transition: 0.3s;
+      width: 60vw;
+      position: absolute;
+      right: 60px;
+      top: 50%;
+      transform: scale(0) translateY(-50%);
+      border-radius: 8px;
+      padding: 8px 16px;
+      background: $Dark;
+
+      &::after{
+        content: "";
+        position: absolute;
+        right: -15px;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 8px solid transparent; 
+        border-left: 8px solid $Dark;
+      }
+    }
+
+    &__input:checked ~ .btn__que__frame{
+      transform: scale(1) translateY(-50%);
+      transition: 0.3s;
+    }
+
+    &__text{
+      color: $White;
+      font-family: Acrom;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  &__cta-first{
+    margin-top: 30px;
+    border-radius: 10px;
+    color: $White;
+    background: $Purple;
+    font-size: 27.692px;
+    padding: 22px 140px;
+    border: none;
+
+    &:hover{
+      background: $Purple-hv;
+    }
+  }
+
+  &__more{
+    border-radius: 10px;
+    background: transparent;
+    font-size: 27.692px;
+    padding: 22px 100px;
+    border: 1px solid $Purple;
+
+    &:hover{
+      background: $Purple-bg;
+    }
+  }
+
+  &__cta{
+    border-radius: 10px;
+    color: $White;
+    background: $Purple;
+    font-size: 27.692px;
+    padding: 22px 140px;
+    border: none;
+
+    &:hover{
+      background: $Purple-hv;
+    }
+  }
+} 
+
+ 

@@ -1,0 +1,73 @@
+@use "_var.scss"as *; 
+@use "_mixins.scss"as *;
+
+.review-vc{
+    margin-top: 100px;
+
+    &__mini-inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__inner{
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        gap: 25px;
+    }
+
+    &__card1{
+        display: flex;
+        flex-direction: column;
+        background: url(../images/bg_yellow.png);
+        background-size: cover;
+        padding: 15px 40px 40px;
+        border-radius: 25px;
+    }
+
+    &__card2{
+        display: flex;
+        flex-direction: column;
+        background: url(../images/bg_purple.png);
+        background-size: cover;
+        padding: 15px 40px 40px;
+        border-radius: 25px;
+    }
+
+    &__card3{
+        display: flex;
+        flex-direction: column;
+        background: url(../images/bg_orange.png);
+        background-size: cover;
+        padding: 15px 40px 40px;
+        border-radius: 25px;
+    }
+
+    &__avatar{
+        align-self: center;
+        width: 160px;
+        height: 160px;
+        background: url(../images/avatar_default.png);
+    }
+
+    &__name{
+        margin-top: 15px;
+        text-align: center;
+        font-size: 24px;
+        line-height: normal;
+    }
+
+    &__review{
+        margin-top: 12px;
+        text-overflow: ellipsis;
+        font-family: Acrom;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    &__paragraph{
+        margin: 0;
+    }
+}

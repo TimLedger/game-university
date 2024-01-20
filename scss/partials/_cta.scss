@@ -1,0 +1,40 @@
+@use "_var.scss"as *;
+@use "_mixins.scss"as *;
+
+.cta{
+  margin-top: 100px;
+  
+    &__inner{ 
+        display: flex;
+        width: 1240px;
+        padding: 40px 100px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        border-radius: 25px;
+        background: $Purple-bg;
+    }
+  
+    &__text{  
+        margin: 0;
+        text-align: center;
+        font-size: 64px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    &__link{
+      display: block;
+      font-family: Acrom;
+      color: $Grey;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 97.5%; /* 19.5px */
+      text-align: center;
+      text-decoration-line: underline;
+    }
+    
+  }

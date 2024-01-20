@@ -1,0 +1,176 @@
+@use "_var.scss"as *;
+@use "_mixins.scss"as *;
+
+.review{
+    margin-top: 100px;
+    
+    &__container{
+        position: relative;
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 0 15px; 
+        width: 100%;
+        overflow: hidden;
+    }
+
+    &__inner{
+        padding: 30px 0;
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(8, 1025px);
+        gap: 25px;
+        overflow: hidden;
+        scrollbar-width: thin; 
+        scrollbar-color: transparent transparent;
+        scroll-snap-type: both mandatory;
+        cursor: grab;
+        
+        &:active{
+            cursor: grabbing;
+        }
+
+        &::-webkit-scrollbar {
+            display: none; 
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 20%; 
+            z-index: 10;
+        }
+
+        &::before{
+            left: 0;
+            background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1)); 
+        }
+
+        &::after{
+            right: 0;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1)); 
+        }
+    }
+
+    &__active{
+        scroll-snap-type: unset;
+    }
+
+    &__card{
+        scroll-snap-align: center;
+        display: grid;
+        grid-template-columns: repeat(2, 500px);
+        gap: 25px;
+        border-radius: 3px;
+    }
+
+
+    &__card-text{
+        display: flex;
+        padding: 70px 40px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    &__card-text-green{
+        position: relative;
+        border-radius: 25px;
+        background: $Green-bg;
+    }
+
+    &__card-text-green::before{
+        content: "";
+        position: absolute;
+        width: 113px;
+        height: 72px;
+        background: url(../images/quotes.png);
+        top: -30px;
+
+    }
+
+    &__card-text-green::after{
+        content: "";
+        position: absolute;
+        width: 113px;
+        height: 72px;
+        background: url(../images/quotes.png);
+        bottom: -23px;
+        right: 40px;
+        transform: rotate(180deg);
+    }
+
+    &__card-text-yellow{
+        position: relative;
+        border-radius: 25px;
+        background: $Yellow-bg;
+    }
+
+    &__card-text-yellow::before{
+        content: "";
+        position: absolute;
+        width: 113px;
+        height: 72px;
+        background: url(../images/quotes_yellow.png);
+        top: -30px;
+
+    }
+
+    &__card-text-yellow::after{
+        content: "";
+        position: absolute;
+        width: 113px;
+        height: 72px;
+        background: url(../images/quotes_yellow.png);
+        bottom: -23px;
+        right: 40px;
+        transform: rotate(180deg);
+    }
+
+    &__text{
+        margin: 0 0 14px;
+        font-family: Acrom;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    &__card-photo{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__img{
+        border-radius: 25px;
+    }
+
+    &__card-link{
+        padding: 40px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        border-radius: 25px;
+        background: $Purple-bg;
+    }
+
+    &__link{
+        display: block;
+        color: $Purple;
+        font-size: 32px;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration-line: underline;
+    }
+
+    &__text-link{
+        margin-top: 5px;
+        display: block;
+        font-size: 32px;
+        font-weight: 400;
+        line-height: normal;
+    }
+}

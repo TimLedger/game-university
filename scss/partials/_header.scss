@@ -1,0 +1,24 @@
+@use "_var.scss" as *;
+@use "_mixins.scss" as *;
+
+.header{   
+  padding: 32px 0;
+  text-align: start;
+  align-items: center;  
+  
+  &__inner{ 
+    display: flex; 
+    justify-content: space-between;
+    
+  }
+
+  &__mini-inner{  
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+  }
+       
+  &__btns{  
+    align-items: start; 
+  } 
+}

@@ -1,0 +1,32 @@
+@use "_var.scss"as *;
+@use "_mixins.scss"as *;
+ 
+.footer{
+  margin: 100px 0 24px;
+
+  &__inner{ 
+    display: flex; 
+    justify-content: space-between;
+    
+  }
+
+  &__mini-inner{  
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+  }
+
+  &__link{
+    margin-top: 18px;
+    display: block;
+    font-family: Acrom;
+    color: $Grey;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 97.5%; 
+    text-align: center;
+    text-decoration-line: underline;
+  }
+  
+}

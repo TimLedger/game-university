@@ -1,0 +1,17 @@
+@use "_var.scss"as *;
+@use "_mixins.scss"as *;
+
+.logo{
+  text-decoration: none;
+  display: flex; 
+  
+  &__img{
+    width: 55px;
+    height: 53.393px; 
+  }
+
+  &__text{
+    margin-left: 22px;
+    font-size: 46px;
+  }
+}

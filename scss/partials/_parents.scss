@@ -1,0 +1,45 @@
+@use "_var.scss"as *;
+@use "_mixins.scss"as *;
+
+.parents{
+    margin-top: 100px;
+
+    &__inner{
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        gap: 25px;
+    }
+
+    &__card-toys{
+        padding: 40px 30px 190px;
+        border-radius: 25px;
+        background: $Purple-bg url(../images/toys_and_games.svg) 50% 188px no-repeat;
+    }
+
+    &__card-child{
+        padding: 40px 35px 190px;
+        border-radius: 25px;
+        background: $Purple-bg url(../images/child_care.svg) 50% 188px no-repeat;
+    }
+
+    &__card-help{
+        padding: 40px 30px 190px;
+        border-radius: 25px;
+        background: $Purple-bg url(../images/help.svg) 50% 188px no-repeat;
+    }
+
+    &__card-wifi{
+        padding: 40px 30px 190px;
+        border-radius: 25px;
+        background: $Purple-bg url(../images/wifi.svg) 50% 188px no-repeat;
+    }
+
+    &__text{
+        margin: 0;
+        font-family: Acrom;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
