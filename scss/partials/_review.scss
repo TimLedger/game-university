@@ -2,175 +2,366 @@
 @use "_mixins.scss"as *;
 
 .review{
-    margin-top: 100px;
+    margin-top: 60px;
+
+    @include sm { 
+        margin-top: 80px;
+    } 
     
-    &__container{
-        position: relative;
-        max-width: 1600px;
-        margin: 0 auto;
-        padding: 0 15px; 
-        width: 100%;
-        overflow: hidden;
-    }
-
     &__inner{
-        padding: 30px 0;
-        margin-top: 30px;
-        display: grid;
-        grid-template-columns: repeat(8, 1025px);
-        gap: 25px;
-        overflow: hidden;
-        scrollbar-width: thin; 
-        scrollbar-color: transparent transparent;
-        scroll-snap-type: both mandatory;
-        cursor: grab;
+        padding: 0 15px;
+        margin-top: 16px;
+        display: flex;
+        gap: 16px;
+        overflow-x: auto;
+        overflow: scroll;
+        will-change: transform;
+        scroll-snap-type: x mandatory;
+        scroll-padding: 15px;
         
-        &:active{
-            cursor: grabbing;
-        }
-
         &::-webkit-scrollbar {
             display: none; 
         }
 
-        &::before,
-        &::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 20%; 
-            z-index: 10;
-        }
-
-        &::before{
-            left: 0;
-            background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1)); 
-        }
-
-        &::after{
-            right: 0;
-            background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1)); 
-        }
-    }
-
-    &__active{
-        scroll-snap-type: unset;
+        @include md { 
+            padding: 24px 15px;
+        } 
+        
+        @include lg { 
+            margin-top: 20px;
+            padding: 24px calc(15px + (50% - 510px));
+            scroll-padding: calc(15px + (50% - 510px));
+        } 
     }
 
     &__card{
-        scroll-snap-align: center;
-        display: grid;
-        grid-template-columns: repeat(2, 500px);
-        gap: 25px;
-        border-radius: 3px;
+        scroll-snap-align: start;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        @include md { 
+            flex-direction: row-reverse;
+            gap: 25px;
+            width: auto;
+        }
     }
 
 
     &__card-text{
         display: flex;
-        padding: 70px 40px;
+        margin: 15px 0;
+        border-radius: 10px;
+        padding: 16px;
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
+
+        @include md { 
+            border-radius: 20px;
+            padding: 52px 23px;
+            width: 290px;
+            margin: 0;
+        }
+
+        @include lg { 
+            padding: 56px 32px;
+            width: 400px;
+        }
     }
 
     &__card-text-green{
         position: relative;
-        border-radius: 25px;
         background: $Green-bg;
-    }
 
-    &__card-text-green::before{
-        content: "";
-        position: absolute;
-        width: 113px;
-        height: 72px;
-        background: url(../images/quotes.png);
-        top: -30px;
+        &::before{
+            content: "";
+            position: absolute;
+            width: 40px;
+            height: 26px;
+            background: url(../images/quotes.png) center / cover;
+            top: -15px;
+            left: 20px;
 
-    }
+            @include md { 
+                width: 65px;
+                height: 41px;
+                left: 23px;
+                top: -17px;
+            }
 
-    &__card-text-green::after{
-        content: "";
-        position: absolute;
-        width: 113px;
-        height: 72px;
-        background: url(../images/quotes.png);
-        bottom: -23px;
-        right: 40px;
-        transform: rotate(180deg);
+            @include lg { 
+                width: 90px;
+                height: 57px;
+                top: -18px;
+                left: 32px;
+            }
+        }
+
+        &::after{
+            content: "";
+            position: absolute;
+            width: 40px;
+            height: 26px;
+            background: url(../images/quotes.png) center / cover;
+            bottom: -15px;
+            right: 20px;
+            transform: rotate(180deg);
+
+            @include md { 
+                width: 65px;
+                height: 41px;
+                right: 14px;
+                bottom: -16px;
+            }
+
+            @include lg { 
+                width: 90px;
+                height: 57px;
+                right: 32px;
+            }
+        }
     }
 
     &__card-text-yellow{
         position: relative;
-        border-radius: 25px;
         background: $Yellow-bg;
+
+        &::before{
+            content: "";
+            position: absolute;
+            width: 40px;
+            height: 26px;
+            background: url(../images/quotes_yellow.png) center / cover;
+            top: -15px;
+            left: 20px;
+
+            @include md { 
+                width: 65px;
+                height: 41px;
+                left: 23px;
+                top: -17px;
+            }
+
+            @include lg { 
+                width: 90px;
+                height: 57px;
+                top: -18px;
+                left: 32px;
+            }
+        }
+
+        &::after{
+            content: "";
+            position: absolute;
+            width: 40px;
+            height: 26px;
+            background: url(../images/quotes_yellow.png) center / cover;
+            bottom: -15px;
+            right: 20px;
+            transform: rotate(180deg);
+
+            @include md { 
+                width: 65px;
+                height: 41px;
+                right: 14px;
+                bottom: -16px;
+            }
+
+            @include lg { 
+                width: 90px;
+                height: 57px;
+                right: 32px;
+            }
+        }
     }
 
-    &__card-text-yellow::before{
-        content: "";
-        position: absolute;
-        width: 113px;
-        height: 72px;
-        background: url(../images/quotes_yellow.png);
-        top: -30px;
-
-    }
-
-    &__card-text-yellow::after{
-        content: "";
-        position: absolute;
-        width: 113px;
-        height: 72px;
-        background: url(../images/quotes_yellow.png);
-        bottom: -23px;
-        right: 40px;
-        transform: rotate(180deg);
-    }
-
-    &__text{
-        margin: 0 0 14px;
+    &__text{ 
+        margin: 0 0 4px;
         font-family: Acrom;
-        font-size: 20px;
+        font-size: 12px;
         font-weight: 400;
         line-height: normal;
+
+        @include md { 
+            margin: 0 0 8px;
+            font-size: 14px;
+        }
+
+        @include lg { 
+            margin: 0 0 10px;
+            font-size: 16px;
+        }
     }
 
     &__card-photo{
         display: flex;
-        flex-direction: column;
-        gap: 20px;
+        justify-content: space-between;
+        gap: 16px;
+
+        @include md { 
+            flex-direction: column;
+            gap: 25px;
+        }
     }
 
     &__img{
-        border-radius: 25px;
+        border-radius: 10px;
+        width: 100px;
+        height: 100px;
+        
+        @include l { 
+            width: 156px;
+            height: 156px;
+        } 
+
+        @include md { 
+            border-radius: 20px;
+            width: 290px;
+            height: 280px;
+        }
+
+        @include lg { 
+            width: 400px;
+            height: 385px;
+        }
     }
+
+    &__img img {
+        width: 100px;
+        height: 100px;
+        
+        @include l { 
+            width: 156px;
+            height: 156px;
+        } 
+
+        @include md { 
+            width: 290px;
+            height: 280px;
+        }
+
+        @include lg { 
+            width: 400px;
+            height: 385px;
+        }
+    }
+
 
     &__card-link{
-        padding: 40px;
+        width: 50%;
+        display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        text-decoration: none;
+        position: relative;
+        padding: 10px;
         gap: 8px;
-        border-radius: 25px;
-        background: $Purple-bg;
-    }
-
-    &__link{
-        display: block;
+        border-radius: 10px;
+        border: 1px solid $Purple;
+        cursor: pointer;
+        color: $Dark;
         color: $Purple;
-        font-size: 32px;
-        font-weight: 400;
-        line-height: normal;
-        text-decoration-line: underline;
+
+        @include l { 
+            width: 42%;
+            padding: 16px 14px;
+        }
+
+        @include md { 
+            padding: 20px 23px 46px;
+            width: auto;
+            border-radius: 20px;
+        }
+
+        @include lg { 
+            padding: 32px 32px 44px;
+        }
+
+        &:hover {
+            color: $Purple-hv;
+            transition: 0.3s;
+        }
+
+        &:hover .review__icon-link path{
+            fill: $Purple-hv;
+            transition: 0.3s;
+        }
+        
+        &:active{
+            color: $Purple-dark;
+            transition: 0.3s;
+        }
+
+        &:active .review__icon-link path{
+            fill: $Purple-dark;
+            transition: 0.3s;
+        }
     }
 
     &__text-link{
-        margin-top: 5px;
         display: block;
-        font-size: 32px;
+        font-size: 16px;
         font-weight: 400;
         line-height: normal;
+
+        @include l { 
+            font-size: 20px;
+        }
+
+        @include md { 
+            font-size: 32px;
+        }
+
+        @include lg { 
+            font-size: 38px;
+        }
     }
+
+    &__name-link{
+        display: block;
+        font-size: 15px;
+        line-height: normal;
+        color: $Dark;
+
+        @include md { 
+            font-size: 20px;
+        }
+
+        @include lg { 
+            font-size: 25px;
+        }
+    }
+
+    &__icon-link{
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        width: 15px;
+        height: 15px;
+
+        @include l { 
+            bottom: 15px;
+            right: 15px;
+            width: 22px;
+            height: 22px;
+        }
+
+        @include md { 
+            bottom: 20px;
+            right: 20px;
+        }
+
+        @include lg { 
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    &__btn{
+        display: flex;
+        justify-content: flex-end;
+        gap: 24px;
+    }
+
 }

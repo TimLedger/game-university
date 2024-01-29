@@ -2,55 +2,197 @@
 @use "_mixins.scss"as *;
 
 .experts{
-    margin-top: 100px;
+    margin-top: 60px;
+
+    @include sm { 
+        margin-top: 80px;
+    } 
 
     &__inner{
-        margin-top: 40px;
+        margin-top: 16px;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 200px 340px;
-        gap: 25px;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        
+        @include l { 
+            gap: 16px;
+        } 
+        
+        @include md { 
+            grid-template-columns: 1fr 1fr 1fr;
+            margin-top: 30px;
+            gap: 20px;
+        } 
     }
 
     &__card-anim{
-        border-radius: 25px;
-        background: $Yellow-bg url(../images/play_circle.svg) 57px 50% no-repeat;
-        padding: 55px 40px 40px 253px;
+        border-radius: 10px;
+        background: $Yellow-bg;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 22px;
+        padding: 16px;
         grid-column: 1/3; 
         grid-row: 1/2; 
+
+        @include md {
+            border-radius: 20px;
+            padding: 37px 30px;
+            gap: 20px;
+        }
         
+        @include lg {
+            padding: 54px;
+            gap: 44px;
+        }
+    }
+
+    &__card-anim-img{
+        width: 41px;
+        height: 41px;
+        aspect-ratio: 1/1;
+        background: url(../images/play_circle.svg) 50% no-repeat;
+        background-size: cover;
+
+        @include md {
+            width: 68px;
+            height: 68px;
+        }
+
+        @include lg {
+            width: 92px;
+            height: 92px;
+        }
     }
 
     &__card-custom{
-        border-radius: 25px;
-        background: $Purple-bg url(../images/settings_heart.svg) 50% 179px no-repeat;
-        padding: 40px;
+        border-radius: 10px;
+        background: $Purple-bg;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 9px;
+        gap: 20px;
         grid-column: 1/2; 
         grid-row: 2/3; 
+
+        @include md {
+            border-radius: 20px;
+            padding: 20px 27px;
+        }
+        
+        @include lg {
+            gap: 32px;
+            padding: 32px;
+        }
+    }
+
+    &__card-custom-img{
+        width: 41px;
+        height: 41px;
+        background: url(../images/settings_heart.svg) 50% no-repeat;
+        background-size: cover;
+
+        @include lg {
+            width: 84px;
+            height: 84px;
+        }
     }
 
     &__card-auto{
-        border-radius: 25px;
-        background: $Purple-bg url(../images/allergy.svg) 50% 179px no-repeat;
-        padding: 40px;
+        border-radius: 10px;
+        background: $Purple-bg;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding: 12px 9px;
         grid-column: 2/3; 
         grid-row: 2/3; 
+
+        @include md {
+            border-radius: 20px;
+            padding: 20px 27px;
+        }
+        
+        @include lg {
+            gap: 32px;
+            padding: 32px;
+        }
+    }
+
+    &__card-auto-img{
+        width: 40px;
+        height: 43px;
+        background: url(../images/allergy.svg) 50% no-repeat;
+        background-size: cover;
+
+        @include lg {
+            width: 80px;
+            height: 88px;
+        }
     }
 
     &__card-chart{
-        border-radius: 25px;
-        background: $Green-bg url(../images/bar_chart.svg) 50% 276px no-repeat;
-        padding: 40px;
-        grid-column: 3/4; 
-        grid-row: 1/3; 
+        border-radius: 10px;
+        background: $Green-bg;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        gap: 22px;
+        padding: 16px;
+        grid-column: 1/3; 
+        grid-row: 3/4; 
+        
+        @include md {
+            border-radius: 20px;
+            flex-direction: column;
+            padding: 32px 32px 70px;
+            grid-column: 3/4; 
+            grid-row: 1/3; 
+        }
+    }
+
+    &__card-chart-img{
+        width: 41px;
+        height: 36px;
+        aspect-ratio: 90/79;
+        background: url(../images/bar_chart.svg) 50% no-repeat;
+        background-size: cover;
+
+        @include md {
+            width: 123.944px;
+            height: 110px;
+        }
+
+        @include lg {
+            width: 180px;
+            height: 158px;
+        }
     }
 
     &__text{
         margin: 0;
         font-family: Acrom;
-        font-size: 24px;
         font-weight: 400;
         line-height: normal;
+        font-size: 10px;
+        
+        @include l {
+            font-size: 12px;
+        }
+
+        @include md {
+            font-size: 14px;
+        }
+
+        @include lg {
+            font-size: 19px;
+        }
     }
 
     &__b{

@@ -1,0 +1,75 @@
+@use "_var.scss"as *;
+@use "_mixins.scss"as *;
+
+.mobile-game{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    
+    &__logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    &__logo-img{
+      width: 46px;
+      height: 46px;
+    }
+  
+    &__logo-text{
+      margin-left: 20px;
+      font-size: 40px;
+    }
+
+    &__red-alert{
+        margin-top: 20px;
+        padding: 10px;
+        border-radius: 10px;
+        background: $Red;
+        line-height: 18.5px; 
+    }
+
+    &__green-alert{
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        background: $Green;
+        line-height: 18.5px;
+    }
+
+    &__text{
+        color: $White;
+        text-align: center;
+        font-family: "Blue curve";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400; 
+    }
+
+    &__btns{
+        margin-top: 60px ;
+    }
+}
+    #messageBox {
+        position: fixed;
+        bottom: 30px;
+        left: 50%;
+        width: calc(100% - 60px);
+        transform: translate(-50%, 0);
+        padding: 20px;
+        font-size: 16px;
+        border-radius: 10px;
+        background: $Dark;
+        color: $White;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+      
+      #messageBox.visible {
+        opacity: 0.8;
+      }

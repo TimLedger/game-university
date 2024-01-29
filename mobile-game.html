@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.ico" type="image/vnd.microsoft.icon"> 
+    <title>ИгроВУЗ - Игра</title>
+    <link rel="stylesheet" href="css/style.css"> 
+</head>
+<body>
+    <section class="mobile-game">
+        <div class="container">
+            <a href="#" class="mobile-game__logo logo">
+                <img class="mobile-game__logo-img" src="images/logo.svg" alt="ИгроВУЗ"> 
+                <span class="mobile-game__logo-text">Игро<span class="multi-colored multi-colored__purple">В</span><span class="multi-colored multi-colored__yellow">У</span><span class="multi-colored multi-colored__green">З</span></span>
+            </a>
+            <div class="mobile-game__red-alert">
+                <span class="mobile-game__text">Упс..<br> На данный момент недоступна мобильная версия</span>
+            </div>
+            <div class="mobile-game__green-alert">
+                <span class="mobile-game__text">Вы можете играть с планшета<br> или компьютера</span>
+            </div>
+            <div class="mobile-game__btns">
+                <button class="btn btn__copy" type="button" onclick="copyToClipboard()">Скопировать ссылку на игру</button>
+                <a class="btn btn__back" href="index.html">На главную</a>
+            </div>
+            <div id="messageBox">
+                <span>Скопировано в буфер обмена</span>
+            </div>
+        </div>
+    </section>
+    <script>
+        const textToCopy = "Ссылка на игру";
+
+        const inputElement = document.createElement("input");
+        const messageBox = document.getElementById("messageBox");
+
+        function copyToClipboard() {
+            inputElement.value = textToCopy;
+            document.body.appendChild(inputElement);
+            inputElement.select();
+            document.execCommand("copy");
+            document.body.removeChild(inputElement);
+
+            if (messageBox.classList.contains("visible")) {
+                hideMessageBox();
+            } else {
+                showMessageBox();
+            }
+        }
+
+        function showMessageBox() {
+          messageBox.classList.add("visible");
+          setTimeout(hideMessageBox, 3000); 
+        }
+        
+        function hideMessageBox() {
+          messageBox.classList.remove("visible");
+        }
+    </script>
+</body>
+</html>

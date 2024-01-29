@@ -2,36 +2,95 @@
 @use "_mixins.scss"as *;
 
 .cta-first{
-    margin-top: 100px;
+    margin-top: 60px;
+
+    @include sm { 
+        margin-top: 80px;
+    } 
 
     &__inner{
-        border-radius: 25px;
+        border-radius: 10px;
         background: $Purple-bg;
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        padding: 70px 175px 80px;
-        gap: 200px;
+        padding: 25px 14px;
+        gap: 15px;
+        
+        @include sm { 
+            padding: 55px;
+            gap: 20px;
+            flex-direction: row;
+        } 
+
+        @include md { 
+            border-radius: 20px;
+        } 
+
+        @include lg { 
+            border-radius: 20px;
+            padding: 56px 140px 64px;
+        } 
     }
 
-    &__logo{
-        width: 294.9px;
-        height: 286.284px;
-        background: url(../images/logo.svg);
-    }
-
+    &__logo,
     &__content{
-        width: 45%;
+        text-align: center;
+        width: 100%;  
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include sm { 
+            width: auto;  
+            text-align: left;    
+            align-items: flex-start;    
+        } 
+    }
+    
+    &__logo-img{
+        width: 187px;
+        height: 182px;
+        aspect-ratio: 1/1;
+        background: url(../images/logo.svg) no-repeat;
+        background-size: contain;
+
+        @include sm { 
+            align-self: flex-start;      
+        } 
+
+        @include lg { 
+            width: 235px;
+            height: 235px;     
+        } 
     }
 
     &__name{
         margin: 0;
-        font-size: 46px;
+        font-size: 26px;   
+
+        @include sm { 
+            align-self: flex-start;      
+        } 
+        
+        @include lg { 
+            font-size: 36px; 
+        } 
     }
 
     &__text{
-        margin: 40px 0 0 0;
-        font-size: 64px;
+        margin: 18px 0 0 0;
+        font-size: 32px;
         line-height: normal;
+
+        @include md { 
+            margin: 35px 0 0 0;
+            font-size: 48px;
+        }
+        
+        @include lg { 
+            font-size: 52px;
+        }
     }
 }

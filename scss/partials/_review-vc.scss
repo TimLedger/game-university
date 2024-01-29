@@ -2,7 +2,11 @@
 @use "_mixins.scss"as *;
 
 .review-vc{
-    margin-top: 100px;
+    margin-top: 60px; 
+
+    @include sm { 
+        margin-top: 80px;
+    } 
 
     &__mini-inner{
         display: flex;
@@ -10,61 +14,202 @@
         align-items: center;
     }
 
+    &__container{
+        @include md { 
+            max-width: 1020px;
+            margin: 0 auto;
+            padding: 0 15px; 
+        }
+    }
+
     &__inner{
-        margin-top: 40px;
+        padding: 0 15px;
+        margin-top: 16px;
         display: flex;
-        justify-content: space-between;
-        gap: 25px;
+        gap: 16px;
+        overflow-x: auto;
+        overflow: scroll;
+        will-change: transform;
+        scroll-snap-type: x mandatory;
+        scroll-padding: 15px;
+        
+        &::-webkit-scrollbar {
+            display: none; 
+        }
+
+        @include md { 
+            margin-top: 5px;
+            overflow: auto;
+            padding: 0;
+        }
+
+        @include lg { 
+            margin-top: 35px;
+        }
     }
 
-    &__card1{
-        display: flex;
+    &__card{
+        display: flex;      
+        text-align: center;  
+        align-items: center;
         flex-direction: column;
-        background: url(../images/bg_yellow.png);
-        background-size: cover;
-        padding: 15px 40px 40px;
-        border-radius: 25px;
     }
 
-    &__card2{
-        display: flex;
-        flex-direction: column;
-        background: url(../images/bg_purple.png);
-        background-size: cover;
-        padding: 15px 40px 40px;
-        border-radius: 25px;
-    }
+    &__card-frame{
+        position: relative;
+        margin-top: 52px;
+        padding: 46px 16px 30px;
+        border-radius: 10px;
+        width: 242px;
 
-    &__card3{
-        display: flex;
-        flex-direction: column;
-        background: url(../images/bg_orange.png);
-        background-size: cover;
-        padding: 15px 40px 40px;
-        border-radius: 25px;
-    }
+        @include md { 
+            width: auto;
+            margin-top: 74px;
+            padding: 46px 20px 32px;
+            border-radius: 20px;
+        }
 
+        @include lg { 
+            padding: 73px 32px 32px;
+        }
+
+        &__green{
+            background: $Green-bg;
+        }
+
+        &__purple{
+            background: $Purple-bg;
+        }
+
+        &__yellow{
+            background: $Yellow-bg;
+        }
+    }
+    
     &__avatar{
         align-self: center;
-        width: 160px;
-        height: 160px;
-        background: url(../images/avatar_default.png);
+        width: 80px;
+        height: 80px;
+        background: url(../images/avatar_default.png) center no-repeat;
+        background-size: cover;
+        z-index: 1;
+
+        @include lg { 
+            width: 128px;
+            height: 128px;
+        } 
+    }
+
+    &__avatar-frame{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        border-radius: 50%;
+        width: 104px;
+        height: 104px;
+
+        @include lg { 
+            width: 148px;
+            height: 148px;
+        } 
+
+        &::before{
+            content: "";
+            bottom: 50%;
+            left: -28px;
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: transparent;
+        }
+
+        &::after{
+            content: "";
+            bottom: 50%;
+            right: -28px;
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: transparent;          
+        }
+
+        &__green{
+            background: $Green-bg;
+
+            &::before{
+                box-shadow: 15px 18px $Green-bg;
+            }
+    
+            &::after{
+                box-shadow: -15px 18px $Green-bg;            
+            }
+        }
+
+        &__purple{
+            background: $Purple-bg;
+
+            &::before{
+                box-shadow: 15px 18px $Purple-bg;
+            }
+    
+            &::after{
+                box-shadow: -15px 18px $Purple-bg;            
+            }
+        }
+
+        &__yellow{
+            background: $Yellow-bg;
+
+            &::before{
+                box-shadow: 15px 18px $Yellow-bg;
+            }
+    
+            &::after{
+                box-shadow: -15px 18px $Yellow-bg;            
+            }
+        }
+    }
+
+    &__content{
+        max-height: 285px;
+        overflow: hidden;
+
+        @include md { 
+            max-height: 295px;
+        } 
+
+        @include lg { 
+            max-height: 388px;
+        }
     }
 
     &__name{
-        margin-top: 15px;
         text-align: center;
-        font-size: 24px;
-        line-height: normal;
+        font-size: 14px;
+        
+        @include lg { 
+            font-size: 19px;
+        } 
     }
 
     &__review{
-        margin-top: 12px;
+        text-align: left;
+        overflow-x: hidden;
         text-overflow: ellipsis;
         font-family: Acrom;
-        font-size: 16px;
+        font-size: 12.8px;
         font-weight: 400;
         line-height: normal;
+
+        @include md { 
+            margin-top: 9px;
+        } 
     }
 
     &__paragraph{

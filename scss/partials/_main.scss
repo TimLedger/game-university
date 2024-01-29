@@ -2,36 +2,104 @@
 @use "_mixins.scss"as *;
 
 .main{
-    margin-top: 100px;
+    margin-top: 60px;
+
+    @include sm { 
+        margin-top: 80px;
+    } 
 
     &__inner{
         display: flex;
         flex-direction: column;
-        gap: 25px;
+        text-align: center;
+        gap: 16px;
+        
+        @include sm { 
+            text-align: left;
+            gap: 20px; 
+        } 
     }
 
     &__hero{
         display: flex;
         justify-content: space-between;
         position: relative;
-        padding: 90px 133px 80px;
-        border-radius: 25px;
+        padding: 35px 15px 80px;
+        border-radius: 10px;
         background: $Purple-bg;
+
+        @include l { 
+            padding: 35px 35px 80px;
+        } 
+
+        @include sm { 
+            padding: 50px 45px 110px;
+        } 
+
+        @include md { 
+            border-radius: 20px;
+        } 
+
+        @include lg { 
+            padding: 75px 105px 95px;
+        } 
+
+        @include xl { 
+            padding: 75px 105px 65px;
+        } 
     }
 
     &__text{
         display: inline-block;
         margin: 0;
-        font-size: 96px;
-        line-height: 97.5%; 
+        font-size: 20px;
         font-weight: 400;
+        line-height: 0.9;
+
+        @include l { 
+            font-size: 36px;
+        } 
+        
+        @include sm { 
+            font-size: 60px;
+            line-height: 1;
+        } 
+
+        @include md { 
+            font-size: 77px;
+        } 
+    }
+
+    &__text-big{
+        font-size: 80px;
+
+        @include l { 
+            font-size: 128px;
+        } 
+
+        @include sm { 
+            font-size: 60px;
+        } 
+
+        @include md { 
+            font-size: 77px;
+        } 
     }
 
     &__gif{
         width: 100%;
-        height: 388px;
-        border-radius: 25px;
-        background: url(../uploads/gif.jpg), lightgray 0px -296.051px / 100% 213.273% no-repeat;
+        height: 286px;
+        border-radius: 10px;
+        background: url(../uploads/gif-sm.png) center, lightgray 0px -296.051px / 100% 213.273% no-repeat;
+        background-size: cover;
+
+        @include md { 
+            border-radius: 20px;
+        } 
         
+        @include md { 
+            height: 310px;
+            background: url(../uploads/gif.jpg) center, lightgray 0px -296.051px / 100% 213.273% no-repeat;
+        } 
     }
 }
