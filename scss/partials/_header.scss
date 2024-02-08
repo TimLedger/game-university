@@ -36,6 +36,7 @@
 
     &:checked ~ .header__burger{
       transform: translateY(0%);
+      transition: 0.3s ease-in;
     }
 
     &:checked ~ .header__backdrop{
@@ -70,7 +71,7 @@
     top: 0;
     right: 0;
     transform: translateY(-100%);
-    transition: 0.3s;
+    // transition: 0.3s;
     background: $Purple-bg;
     padding: 74px 30px;
     align-items: center;

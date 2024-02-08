@@ -1,5 +1,5 @@
 function isMobile() {
-    return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    return /iPhone|iPod|Android/i.test(navigator.userAgent);
 }
 
 window.onload = function() {

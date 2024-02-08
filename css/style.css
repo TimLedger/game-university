@@ -627,6 +627,7 @@ button, select {
 }
 .header__check:checked ~ .header__burger {
   transform: translateY(0%);
+  transition: 0.3s ease-in;
 }
 .header__check:checked ~ .header__backdrop {
   display: block;
@@ -659,7 +660,6 @@ button, select {
   top: 0;
   right: 0;
   transform: translateY(-100%);
-  transition: 0.3s;
   background: #F9F5FF;
   padding: 74px 30px;
   align-items: center;
